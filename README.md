@@ -1,5 +1,5 @@
 # htmlparser-cpp
-babby's first html parser in C++, overengineered
+babby's first html parser in C++
 
 ## raison d'etre
 \- i needed parsing capability for another one of my projects </br>
@@ -16,7 +16,6 @@ babby's first html parser in C++, overengineered
 
 ## limitations
 \- a 1-week old cpp dev birthed this into existence. do point out any better approach to the spaghetti that is the parsing logic </br>
-\- the 1-week old baby in question got brain cancer halfway through this project </br>
 \- will break down at javascript embeds if the raw string `</script>` is involved. no idea how to deal with it at the moment </br> 
 \- only built for trusted page input. use recklessly at your own risk</br> 
 \- no "parse exceptions" of any kind implemented</br>
