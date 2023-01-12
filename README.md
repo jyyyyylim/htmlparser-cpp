@@ -11,7 +11,7 @@ babby's first html parser in C++
 - [x] shouldnt discriminate against even the most horrendously formatted markup
 - [ ] any facility whatsoever to process the parsed tree
 - [x] parses at reasonable speed
-- [ ] support of emmet-like input rules to the parser
+- [ ] (tentative) support of emmet-like input rules to the parser
 
 
 ## limitations
