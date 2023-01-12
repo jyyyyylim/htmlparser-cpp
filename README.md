@@ -6,11 +6,11 @@ babby's first html parser in C++
 
 ## aims
 - [x] Just Works
+- [ ] 支持 CJK 字符集
 - [x] given a html5-compliant file input, accurately produces a doubly linked general tree representation of the DOM
 - [x] accurately preserves ALL tag attributes
 - [x] shouldnt discriminate against even the most horrendously formatted markup
 - [ ] any facility whatsoever to process the parsed tree
-- [ ] 支持 CJK 字符集
 - [x] parses at reasonable speed
 - [ ] (tentative) support of emmet-like input rules to the parser
 
