@@ -10,6 +10,7 @@ babby's first html parser in C++
 - [x] accurately preserves ALL tag attributes
 - [x] shouldnt discriminate against even the most horrendously formatted markup
 - [ ] any facility whatsoever to process the parsed tree
+- [ ] 支持 CJK 字符集
 - [x] parses at reasonable speed
 - [ ] (tentative) support of emmet-like input rules to the parser
 
