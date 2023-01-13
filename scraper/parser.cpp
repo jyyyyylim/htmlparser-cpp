@@ -23,13 +23,13 @@ using std::string;
 
 
 //initialize file handle
-readReturn openHandle(string inputFile){
+std::ifstream& openHandle(string inputFile){
     std::ifstream parsedFile (inputFile);
-    if (parsedFile.is_open()){
-        return read(parsedFile);
-    } else {
+    if (!parsedFile.is_open()){
         printf("file located at %s does not exist", inputFile);
+        //return nullptr;
     }
+    return parsedFile;
 };
 
 
@@ -341,7 +341,7 @@ readReturn read(std::ifstream& handle){
         }
 
     }
-    std::cout << "done";
+    //std::cout << "done";
 
 
     returnParams.documentRoot= rootNode;

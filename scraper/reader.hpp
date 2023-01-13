@@ -1,7 +1,6 @@
-#include <map>
 #include <string>
 #include <vector>
-using std::string, std::vector, std::map;
+using std::string, std::vector;
 
 
 //#include "../dom/dom.hpp"
@@ -31,6 +30,6 @@ typedef struct {
 } readReturn;
 
 
-readReturn openHandle(string inputFile);
+std::ifstream& openHandle(string inputFile);
 readReturn read(std::ifstream& handle);
 
