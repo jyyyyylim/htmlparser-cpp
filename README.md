@@ -1,5 +1,5 @@
 # htmlparser-cpp
-babby's first html parser in C++
+babby's first C++ project
 
 ## raison d'etre
 \- i needed parsing capability for another one of my projects </br>
