@@ -4,7 +4,7 @@ babby's first C++ project
 ## raison d'etre
 \- i needed parsing capability for another one of my projects </br>
 
-## aims
+## progress
 - [x] Just Works
 - [ ] 支持 CJK 字符集
 - [x] given a html5-compliant file input, accurately produces a doubly linked general tree representation of the DOM
@@ -12,7 +12,7 @@ babby's first C++ project
 - [x] shouldnt discriminate against even the most horrendously formatted markup
 - [ ] any facility whatsoever to process the parsed tree
 - [x] parses at reasonable speed
-- [ ] (tentative) support of emmet-like input rules to the parser
+- [ ] support of emmet-like input rules to the parser
 
 
 ## limitations
