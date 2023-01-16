@@ -21,16 +21,17 @@ using std::string;
 
 //2 approaches: LL, pointer array
 
+//std::ifstream& parsedFile;
 
 //initialize file handle
-std::ifstream& openHandle(string inputFile){
-    std::ifstream parsedFile (inputFile);
-    if (!parsedFile.is_open()){
-        printf("file located at %s does not exist", inputFile);
-        //return nullptr;
-    }
-    return parsedFile;
-};
+//std::ifstream& openHandle(string inputFile){
+//    std::ifstream parsedFile (inputFile);
+//    if (!parsedFile.is_open()){
+//        printf("file located at %s does not exist", inputFile);
+//        //return nullptr;
+//    }
+//    return parsedFile;
+//};
 
 
 
@@ -53,8 +54,17 @@ vector<string> tag_ignore = {"script", "css", "style", "svg", "path"};
 vector<string> boolattrs = {"allowfullscreen", "async", "autofocus", "autoplay", "checked", "controls", "default", "defer", "disabled", "formnovalidate", "inert", "ismap", "itemscope", "loop", "multiple", "muted", "nomodule", "novalidate", "open", "playsinline", "readonly", "required", "reversed", "selected"};
 
 //function used in conjunction with openHandle(), addr to ifstream object is used
-readReturn read(std::ifstream& handle){
+readReturn read(string inputFile){
     readReturn returnParams;
+
+    std::ifstream handle (inputFile);
+    if (!handle.is_open()){
+        printf("file located at %s does not exist", inputFile);
+        return returnParams;
+        //return nullptr;
+    }
+
+    //std::ifstream& parsedFile = new std::ifstream&;
 
     state parserState = STATE_ctnt;
     string ln, endtag;

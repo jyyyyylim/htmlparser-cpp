@@ -1,7 +1,12 @@
+#ifndef reader
+#define reader
+
 #include <string>
 #include <vector>
 
+//#include "../dom/node.hpp"
 #include "../dom/dom.hpp"
+
 using std::string, std::vector;
 
 
@@ -31,6 +36,8 @@ typedef struct {
 } readReturn;
 
 
-std::ifstream& openHandle(string inputFile);
-readReturn read(std::ifstream& handle);
+//std::ifstream& openHandle(string inputFile);
+//readReturn read(std::ifstream& handle);
+readReturn read(string inputFile);
 
+#endif

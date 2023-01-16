@@ -1,7 +1,13 @@
+#ifndef DOM
+#define DOM
+
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
+
+
+//#include "./node.hpp"
 using std::string, std::vector, std::map;
 
 
@@ -12,8 +18,6 @@ using std::string, std::vector, std::map;
 //2 approaches: LL, pointer array
 //LL: no random reads, constant time reordering
 //arr: constant time access, shit reordering time
-
-
 
 //define domtree mechanism
 //domNode, doubly linked for reverse traversal
@@ -40,7 +44,6 @@ struct embeddedJS {
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-domNode* init();
 
 domNode* setTagContent(domNode* parent, string tagContent);
 domNode* setTagAttributes(domNode* parent, string key);
@@ -60,3 +63,5 @@ void depthTree(domNode* root, int searchDepth);
 
 void searchByTag(string tagName);
 void searchByClass(string tagClass);
+
+#endif
