@@ -1,9 +1,10 @@
 #include <string>
 #include <vector>
+
+#include "../dom/dom.hpp"
 using std::string, std::vector;
 
 
-//#include "../dom/dom.hpp"
 
 
 

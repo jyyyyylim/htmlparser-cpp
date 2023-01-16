@@ -64,7 +64,7 @@ readReturn read(std::ifstream& handle){
     rootPopulated = utfBOM = charIsEnclosed = tagSelfCloses = unsanitizedIgnore = readcursorEnclosed = isBoolAttr = false;
 
     //create the root node
-    domNode* rootNode = init();
+    domNode* rootNode = new domNode;
     rootNode->parentNode = nullptr;
     
     domNode* currentContext = rootNode;
