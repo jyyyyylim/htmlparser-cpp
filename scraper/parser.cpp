@@ -85,7 +85,6 @@ readReturn read(string inputFile){
             //ignore odd bytes on BOM encoded files
             if (static_cast<int>(c) < 1){continue;}
 
-            //discard state: skips checks regardless
             if (parserState==STATE_discard){
 
                 //issue: without reader "foresight" any closing brackets including the embeds count 
@@ -143,22 +142,16 @@ readReturn read(string inputFile){
             } 
 
 
-            //character is free-floating, only check for new tags and content
-            //check context for ignores
+            //character is "free-floating"
             if (parserState==STATE_ctnt){
 
                 if (c == '<'){
-                    //if "cursor" hits opening tag
-
                     if (!empty(charBuffer)){
                         setTagContent(currentContext, charBuffer);
                     }
-                    
-                    
                     clrCharBuffer();
                     
                     parserState = STATE_within_tag;
-                    //std::cout << "entered into a tag\n";
                     continue;
 
                 } else {
@@ -182,15 +175,11 @@ readReturn read(string inputFile){
                         continue;
 
                     //as the only aim is to show the existence of ignored tags yet ignore its contents
-                    //hand over to the discard routine
                     } else if (in_array(charBuffer, tag_ignore)){
                         
                         currentContext = pushOffspring(currentContext, charBuffer);
-                        //currentContext->occurance = lnnr;
-
                         endtag = "</" + charBuffer + ">"; 
                         clrCharBuffer();
-
 
                         unsanitizedIgnore = true;
                         parserState = STATE_discard;
@@ -205,8 +194,6 @@ readReturn read(string inputFile){
                         continue;
                     } else {
                         currentContext = pushOffspring(currentContext, charBuffer);
-                        //currentContext->occurance = lnnr;
-
                         clrCharBuffer();
                         parserState = STATE_ctnt;
                         continue;
@@ -221,10 +208,8 @@ readReturn read(string inputFile){
                         rootPopulated = true;
                     } else {
                         currentContext = pushOffspring(currentContext, charBuffer);
-                        //currentContext->occurance = lnnr;
                     }
                     
-                    //tag is "self closing"
                     if (in_array(charBuffer, tag_selfClosing)){    
                         tagSelfCloses = true;
                     } 
