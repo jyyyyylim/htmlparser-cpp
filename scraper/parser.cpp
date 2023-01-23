@@ -1,13 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <algorithm>
 #include <vector>
 
 #include "../dom/dom.hpp"
+#include "../algo/algo.hpp"
 #include "./reader.hpp"
 
-using std::string;
+//using std::string;
 
 //demands:
 //CRUD on dom elements, both tag and content
@@ -44,9 +44,7 @@ void clrTemp(){temp = "";}
 
 
 
-bool in_array(const string value, const vector<string> array){
-    return std::find(array.begin(), array.end(), value) != array.end();
-}
+
 
 
 vector<string> tag_selfClosing = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"};
