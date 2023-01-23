@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+#include "../dom/dom.hpp"
+
 using std::string, std::vector;
 
 //plan: defined custom types for the various select operations
@@ -31,19 +33,25 @@ enum operation {child, sibling, ascension, group, mul};
 //a "selector" node never has offspring and is always rooted to an "operation" node
 //an "operation" node has no limits to its placement except it cannot be rooted to a "selector" node
 
+typedef string TAG;
+typedef string TAG_WITHCLASS;
 
-typedef string SELECTION_TOKEN;
+typedef union {
+    TAG tg;
+    TAG_WITHCLASS tc;
+} SELECTION_TOKEN;
+
+//typedef string SELECTION_TOKEN;
 typedef string SELECTION_OPERATOR;
 
 
 typedef union {
-    SELECTION_TOKEN token;
-    syntaxNode      nestedOp;
+    SELECTION_TOKEN tk;
+    syntaxNode*     op;
 } PARAMETER_GENERIC;
 
 typedef struct {
-    syntaxNode*     left;
-    syntaxNode*     right;
+    //syntaxNode*     parent;
     SELECTION_OPERATOR  operation;
     PARAMETER_GENERIC   data[2];
 } syntaxNode;
@@ -58,7 +66,9 @@ typedef struct {string args[2];} BINARY_OPERATION;
 
 
 
-void parseRule(string ruleInput);
+syntaxNode* parseRule(string ruleInput);
+syntaxNode* newAstNode(SELECTION_OPERATOR op, PARAMETER_GENERIC param);
+vector<domNode*> searchByRule(syntaxNode* syntaxTree, domNode* domRoot);
 
 
 #endif
