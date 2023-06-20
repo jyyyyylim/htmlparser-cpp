@@ -18,7 +18,7 @@ babby's first C++ project. *refactor in progress*
 ## limitations
 \- a 1-week old cpp dev birthed this into existence. ~do point out any better approach to the spaghetti that is the parsing logic~ </br>
 \- will break down at javascript embeds if the raw string `</script>` is involved. clueless as to how to deal with it at the moment </br> 
-\- only built with trusted inputs in consideration. use recklessly at your own risk</br> 
-\- no "parse exceptions" of any kind implemented</br>
-\- does not preserve script and stylesheet code embeds</br>
+\- built without unsafe input handling considered. use recklessly at your own risk</br> 
+\- no "parse exceptions" of any kind implemented... yet?</br>
+\- discards certain data such as script and stylesheet embeds</br>
 \- excessive spaces within the content are not ignored, though its, at worst, an annoyance that doesnt affect the accuracy of the structure
